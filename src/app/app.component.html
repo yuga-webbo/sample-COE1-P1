@@ -1,0 +1,18 @@
+<div style="text-align: center">
+    <h1>
+    From Appcomponent
+    </h1>
+    <h3>
+        {{recievedChildMessage}}
+    </h3>
+    <app-test (messageToEmit)="getMessage($event)" [parentData]="name">
+
+    </app-test>
+    
+</div>
+<employee-list>
+
+</employee-list>
+<app-employee-details>
+    
+</app-employee-details>

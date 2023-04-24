@@ -1,0 +1,107 @@
+<h2 class="text-success">  
+    Welcome {{name}}
+    </h2>
+    
+    
+    
+    <h2>{{2+4}}</h2>     <!--interpolation -->
+    <h2>{{"Welcome " +name}}</h2>     <!--interpolation -->
+    <h2>{{name.length}}</h2>       <!--interpolation -->
+    
+    <h2 [ngClass]="messageClass">Code</h2>     <!--  many class binding -->
+    <h2 [class]="successClass">{{name.toUpperCase()}}</h2>    <!-- class binding -->
+    <h2 [class.text-danger]="hasError"> CodeEvolution</h2>    <!-- class binding -->
+    <h2 [class.text-danger]="hasErr"> CodeEvolution</h2>       <!-- class binding -->
+    
+    <h2>{{greetUser()}}</h2>      <!--interpolation -->
+    <h2>{{2+4}}</h2>      <!--interpolation -->
+    <h2>{{siteUrl}}</h2>        <!--interpolation -->
+    
+    
+    <input [id]="myId" type="text" value ="yuga"/>           <!--property  binding -->
+    <input [disabled]="isDisabled"id={{myId}} type="text" value ="yuga"/>         <!--property  binding -->
+    <input bind-disabled="isDisabled" type="text" value ="yuga"/>           <!--property  binding -->
+  
+    <h2 [style.color]="'orange'"> Style binding retro </h2>        <!--Style binding-->
+    <h2 [style.color]="hasError? 'red':'green'"> Style binding retro </h2>     <!--Style binding-->
+    <h2 [style.color]="highColor"> Style binding retro </h2>       <!--Style binding-->
+    <h2 [ngStyle]="titleStyle"> Style binding retro </h2>       <!--Style binding-->
+  
+    <button (click)="onClick()">Greet</button>   <!-- Event Binding-->
+    {{greet}}                              
+    <button (click)="onClic($event)">Greet</button>   <!-- Event Binding-->
+    {{greeting}}
+    <button (click)="gree='Welcome Everyone'">Greet</button>     <!-- Event Binding-->
+    {{gree}}
+  
+  
+    <input  #myInput type="text">           <!-- Template reference-->
+    <button (click)="logMessage(myInput.value)">Log</button>           <!-- Template reference-->
+    <button (click)="logMessage(myInput)">Log</button>
+  
+    <input [(ngModel)]="nam" type="text">      <!-- Two way binding-->
+    {{nam}}
+  
+  
+  
+    <h2 *ngIf="display ;else elseblock">
+              democracy 
+    </h2>
+    <ng-template #elseblock>
+    <h2>
+    Name is Hidden
+    </h2>
+    </ng-template>
+  
+    <div *ngIf="displayname; then thenblock;else elseblock"></div>
+    <ng-template #thenblock>
+    <h2>democracy</h2>
+    </ng-template>
+    <ng-template #elseblock>
+    <h2>Name is Hidden</h2>
+    </ng-template>
+  
+    <div [ngSwitch]="colore">
+      <div *ngSwitchCase="'red'">you pick red color</div>
+      <div *ngSwitchCase="'blue'">you pick blue color</div>
+      <div *ngSwitchCase="'yellow'">you pick yellow color</div>
+      <div *ngSwitchDefault>you pick again</div>
+    </div>
+    <div *ngFor="let color of colors;index as i">
+      <h2>{{i}} {{color}}</h2>
+    </div>
+    <div *ngFor="let color of colors;first as f">
+      <h2>{{f}} {{color}}</h2>
+    </div>
+    <div *ngFor="let color of colors;last as l">
+      <h2>{{l}} {{color}}</h2>
+    </div>
+    <div *ngFor="let color of colors;odd as o">
+      <h2>{{o}} {{color}}</h2>
+    </div>
+  
+   
+    <h2>{{"Hello "+ parentData}}</h2>
+    <h2>{{"Hello "+ nan}}</h2>
+  
+    <button (click)="sendMessageToParent()">Send Event</button>
+  
+    <h3>{{name | lowercase }}</h3>
+    <h3>{{name | uppercase }}</h3>
+    <h3>{{quert | titlecase }}</h3>
+    <h3>{{sem| slice:3:5 }}</h3>
+    <h3>{{person | json }}</h3>
+    
+    <h3>{{5.678 | number:'1.2-3'}}</h3>
+    <h3>{{5.678| number:'3.4-5' }}</h3>
+    <h3>{{5.678| number:'3.1-2'}}</h3>
+    <h3>{{0.58| percent}}</h3>
+    <h3>{{0.25| currency}}</h3>
+    <h3>{{0.25| currency:'GBP'}}</h3>
+    <h3>{{0.25| currency:'GBP':'code'}}</h3>
+  
+  
+    <h3>{{date}}</h3>
+    
+  
+  
